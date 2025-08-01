@@ -8,4 +8,12 @@ class Student {
   Student({required String name, required double grade})
       : _name = name,
         _grade = grade;
+
+   // Getters
+  String get name => _name;
+  double get grade => _grade;
+  String? get email => _email;
+  String? get address => _address;
+  String? get phone => _phone;
+
 }
