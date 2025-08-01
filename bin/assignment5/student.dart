@@ -32,4 +32,9 @@ class Student {
   set address(String? value) => _address = value;
   set phone(String? value) => _phone = value;
 
+// to String 
+ @override
+  String toString() {
+    return 'Name: $_name, Grade: $_grade, Email: ${_email ?? "N/A"}, Address: ${_address ?? "N/A"}, Phone: ${_phone ?? "N/A"}';
+  }
 }
