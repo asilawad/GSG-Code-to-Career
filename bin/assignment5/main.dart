@@ -15,4 +15,17 @@ void main() {
 
   students[2].phone = "789123";
   students[2].address = "Garden Road";
+
+  //print all students information
+  print("All Students:");
+  for (var s in students) {
+    print(s);
+  }
+
+  //Print students whose grades > 80
+  var highGrades = Student.searchStudents(students, 80, true);
+  print("\nStudents with grade > 80:");
+  for (var s in highGrades) {
+    print(s);
+  }
 }

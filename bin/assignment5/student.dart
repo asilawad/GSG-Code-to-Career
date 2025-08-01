@@ -37,7 +37,7 @@ class Student {
     return 'Name: $_name, Grade: $_grade, Email: ${_email ?? "N/A"}, Address: ${_address ?? "N/A"}, Phone: ${_phone ?? "N/A"}';
   }
 
-  List<Student> searchStudents(
+ static List<Student> searchStudents(
       List<Student> students, double targetGrade, bool isGreater) {
     List<Student> result = [];
 
