@@ -9,15 +9,14 @@ class Student {
       : _name = name,
         _grade = grade;
 
-   // Getters
+  // Getters
   String get name => _name;
   double get grade => _grade;
   String? get email => _email;
   String? get address => _address;
   String? get phone => _phone;
 
-
- // Setters
+  // Setters
   set name(String value) => _name = value;
 
   set grade(double value) {
@@ -32,9 +31,30 @@ class Student {
   set address(String? value) => _address = value;
   set phone(String? value) => _phone = value;
 
-// to String 
- @override
+// to String
+  @override
   String toString() {
     return 'Name: $_name, Grade: $_grade, Email: ${_email ?? "N/A"}, Address: ${_address ?? "N/A"}, Phone: ${_phone ?? "N/A"}';
+  }
+
+  List<Student> searchStudents(
+      List<Student> students, double targetGrade, bool isGreater) {
+    List<Student> result = [];
+
+    if (isGreater) {
+      for (var student in students) {
+        if (student.grade > targetGrade) {
+          result.add(student);
+        }
+      }
+    } else {
+      for (var student in students) {
+        if (student.grade < targetGrade) {
+          result.add(student);
+        }
+      }
+    }
+
+    return result;
   }
 }
