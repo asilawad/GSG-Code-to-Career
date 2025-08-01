@@ -28,4 +28,9 @@ void main() {
   for (var s in highGrades) {
     print(s);
   }
+
+  // Modify an optional property for a student after creation
+  students[2].email = "omar@mail.com";
+  print("\nUpdated Omar's info:");
+  print(students[2]);
 }
