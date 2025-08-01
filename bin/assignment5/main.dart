@@ -33,4 +33,11 @@ void main() {
   students[2].email = "omar@mail.com";
   print("\nUpdated Omar's info:");
   print(students[2]);
+
+  print("Students who passed:");
+  for (var student in students) {
+    if (student.isPassed()) {
+      print(student.name);
+    }
+  }
 }

@@ -57,4 +57,8 @@ class Student {
 
     return result;
   }
+
+   bool isPassed() {
+    return _grade >= 60;
+  }
 }
