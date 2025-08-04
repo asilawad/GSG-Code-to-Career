@@ -40,4 +40,13 @@ void main() {
       print(student.name);
     }
   }
+
+//Sort students in descending order by grade
+  students.sort((a, b) => b.grade.compareTo(a.grade));
+
+// Print students after sorting
+  print("Students sorted by grade (descending):");
+  for (var student in students) {
+    print(student);
+  }
 }
