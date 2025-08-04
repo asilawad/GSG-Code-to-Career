@@ -1,4 +1,6 @@
 class Student {
+  static int _nextId = 1;
+  final int _id;
   String _name;
   double _grade;
   String? _email;
@@ -7,7 +9,8 @@ class Student {
 
   Student({required String name, required double grade})
       : _name = name,
-        _grade = grade;
+        _grade = grade,
+        _id = _nextId++;
 
   // Getters
   String get name => _name;
@@ -34,10 +37,10 @@ class Student {
 // to String
   @override
   String toString() {
-    return 'Name: $_name, Grade: $_grade, Email: ${_email ?? "N/A"}, Address: ${_address ?? "N/A"}, Phone: ${_phone ?? "N/A"}';
+    return 'ID: $_id, : $_name, Grade: $_grade, Email: ${_email ?? "N/A"}, Address: ${_address ?? "N/A"}, Phone: ${_phone ?? "N/A"}';
   }
 
- static List<Student> searchStudents(
+  static List<Student> searchStudents(
       List<Student> students, double targetGrade, bool isGreater) {
     List<Student> result = [];
 
@@ -58,7 +61,7 @@ class Student {
     return result;
   }
 
-   bool isPassed() {
+  bool isPassed() {
     return _grade >= 60;
   }
 }
